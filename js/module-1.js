@@ -78,3 +78,75 @@ if (Number.isNaN(firstNumber, secondNumber, thirdNumber) === false) {
 giveMax() */
 
 //7
+function getMark(mark) {
+  switch (true) {
+    case mark >= 89 && mark <= 100:
+      console.log("A");
+      break;
+    case mark >= 75 && mark <= 88:
+      console.log("B");
+      break;
+    case mark >= 60 && mark <= 74:
+      console.log("C");
+      break;
+    case mark >= 45 && mark <= 59:
+      console.log("D");
+      break;
+    case mark >= 20 && mark <= 44:
+      console.log("E");
+      break;
+    case mark < 20:
+      console.log("F");
+      break;
+    default:
+      console.log("error");
+  }
+}
+getMark(25);
+//8
+function getTime(number) {
+  let hour = Math.floor(number / 60)
+  let minute = number % 60
+  console.log(`${hour}:${minute}`);
+}
+getTime(70);
+getTime(450)
+getTime(1441)
+
+//9
+//1 написать массив с вариантами 2 компьютер загадывает случайно число от и до 3 число подставляется в индекс 4 сделать условие на выигрышные
+let arr = ["камень", "ножницы", "бумага"]
+let compChoice = arr[Math.floor(Math.random() * 3)]
+console.log(compChoice);
+let userChoice = prompt("Введите свой вариант")
+if (userChoice === "камень" && compChoice === "ножницы" || userChoice === "бумага" && compChoice === "камень" || userChoice === "ножницы" && compChoice === "бумага") {
+  alert('user win');
+} else if (userChoice === "камень" && compChoice === "бумага" || userChoice === "бумага" && compChoice === "ножницы" || userChoice === "ножницы" && compChoice === "камень") {
+ alert(`computer win`);
+} else {
+  alert('draw');
+}
+/* for (let i = 1; i <= 100; i++) {
+    let string = ""
+    if (i % 3 === 0) {
+     string += "Fizz"
+    } 
+    if (i % 5 === 0) {
+     string += "Buzz"
+    }
+    console.log(string || i);
+    }
+ */
+
+let board = "";
+for (let i = 0; i < 8; i++) {
+  for (let j = 0; j < 8; j++) {
+    if ((j + i) % 2 === 0) {
+      board += " ";
+    } else {
+      board += "#";
+    }
+  }
+  board += "\n";
+}
+console.log(board);
